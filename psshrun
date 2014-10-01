@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# Check for arguments
+if [ $# -ne 2 ]; then
+    echo "Error: not enough arguments given"
+    exit 1
+fi
+
+# Store and sort arguments
+configfile=${1}
+shift
+cmd=${*}
+
+# Check configuration variable
+if [ ! ${psshrun_configpath} ]; then
+    echo "Error: \$psshrun_configpath not set"
+    exit 1
+fi
+
+# Check if directory exists
+if [ ! -d ${psshrun_configpath} ]; then
+    echo "Error: Folder ${psshrun_configpath} doesn't exist"
+    exit 1
+fi
+
+# Check if specific configuration file
+if [ ! -f ${psshrun_configpath}/"${configfile}" ]; then
+    echo "Error: Configuration file \"${configfile}\" doesn't exist"
+    exit 1
+fi
+
+pssh -h ${psshrun_configpath}/"${configfile}" "${cmd}"
+exit 0
