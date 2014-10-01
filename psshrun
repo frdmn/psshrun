@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Check for arguments
-if [ $# -ne 2 ]; then
+if [ ! $# -ge 2 ]; then
     echo "Error: not enough arguments given"
     exit 1
 fi
