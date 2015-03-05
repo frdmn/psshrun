@@ -10,6 +10,7 @@ fi
 configfile=${1}
 shift
 cmd=${*}
+timeout=0 # 0 for no timeout
 
 # Check configuration variable
 if [ ! ${psshrun_configpath} ]; then
@@ -29,5 +30,5 @@ if [ ! -f ${psshrun_configpath}/"${configfile}" ]; then
     exit 1
 fi
 
-pssh -h ${psshrun_configpath}/"${configfile}" "${cmd}"
+pssh -t ${timeout} -h ${psshrun_configpath}/"${configfile}" "${cmd}"
 exit 0
