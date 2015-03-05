@@ -30,5 +30,5 @@ if [ ! -f ${psshrun_configpath}/"${configfile}" ]; then
     exit 1
 fi
 
-pssh -t ${timeout} -h ${psshrun_configpath}/"${configfile}" "${cmd}"
+pssh -t ${timeout}  -o ~/.pssh_logs/stdout -e ~/.pssh_logs/stderr -h ${psshrun_configpath}/"${configfile}" "${cmd}"
 exit 0
