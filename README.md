@@ -37,4 +37,4 @@ To run commands simple specify the specific host file and the command you want t
 
 # License
 
-[WTFPL](./LICENSE)
+[MIT](./LICENSE)
