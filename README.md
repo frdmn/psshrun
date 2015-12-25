@@ -35,6 +35,10 @@ To run commands simple specify the specific host file and the command you want t
     [2] 23:06:15 [SUCCESS] dummy@chewbacca.yeahwh.at
     [3] 23:06:17 [SUCCESS] dummy@r2-d2.yeahwh.at
 
+# Version
+
+1.0.0
+
 # License
 
 [MIT](./LICENSE)
